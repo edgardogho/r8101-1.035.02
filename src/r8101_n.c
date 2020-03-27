@@ -9982,7 +9982,7 @@ rtl8101_get_mac_address(struct net_device *dev)
         for (i = 0; i < MAC_ADDR_LEN; i++)
                 mac_addr[i] = RTL_R8(tp, MAC0 + i);
 
-        if (tp->mcfg == CFG_METHOD_14 || tp->mcfg == CFG_METHOD_17 ||
+        if (tp->mcfg == CFG_METHOD_14 || /*tp->mcfg == CFG_METHOD_17 ||*/
             tp->mcfg == CFG_METHOD_18 || tp->mcfg == CFG_METHOD_19) {
                 *(u32*)&mac_addr[0] = rtl8101_eri_read(tp, 0xE0, 4, ERIAR_ExGMAC);
                 *(u16*)&mac_addr[2] = rtl8101_eri_read(tp, 0xE4, 2, ERIAR_ExGMAC);
